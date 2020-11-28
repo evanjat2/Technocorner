@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/comingsoon.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+</head>
+<body>
+    <div class="navbar">
+    <nav>
+        <div class="logo">
+            <h4>Technocorner</h4>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://www.instagram.com/technocornerugm/">About Us</a></li>
+            </ul>
+    </nav>
+    </div>
+
+    <div class="content">
+        <img src="./picture/LOGO.png">
+    </div>
+
+    <div class="coming">
+        <h1>Coming Soon</h1> 
+        <hr>
+
+        <p id="launch"></p>
+    </div>
+
+</body>
+
+<script>
+    var countDownDate = new Date ("Jan 1, 2021 00:00:00").getTime();
+    var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("launch").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+        if( distance < 0) {
+            clearInterval(x);
+            document.getElementById("launch").innerHTML = "EXPIRED";
+        }
+    }, 1000)
+</script>
+</html>
